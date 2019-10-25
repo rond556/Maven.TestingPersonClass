@@ -6,30 +6,61 @@ package com.zipcodewilmington.person;
 public class Person {
     private String name;
     private int age;
+    private String hairColor;
 
     public Person() {
+        name = "";
+        age = Integer.MAX_VALUE;
     }
 
     public Person(int age) {
+        this.age = 5;
     }
 
     public Person(String name) {
+        this.name = "Leon";
     }
 
     public Person(String name, int age) {
+        this.name = "Leon";
+        this.age = 5;
     }
 
-    public void setName(String name) {
+
+    void setName(String name) {
+        this.name = name;
     }
 
-    public void setAge(int age) {
+    void setAge(int age) {
+        this.age = age;
     }
 
-    public String getName() {
-        return null;
+    void setHairColor(String hairColor){
+        this.hairColor = hairColor;
     }
 
-    public Integer getAge() {
-        return null;
+    String getName() {
+        return name;
+    }
+
+    Integer getAge() {
+        return age;
+    }
+
+    String getHairColor(){
+        return hairColor;
+    }
+
+    static Boolean oldEnoughToDrive(Integer age){
+        return age > 16;
+    }
+
+    static Integer setHeightInInches (Integer feet, Integer inches){
+        return feet * 12 + inches;
+    }
+
+    static Double getHeightInCentimeters(Integer feet,Integer inches){
+        Integer heightInInches = setHeightInInches(feet,inches);
+        return heightInInches * 2.54;
     }
 }
